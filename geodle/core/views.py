@@ -33,7 +33,7 @@ class GameRoundRetrieveAPIView(RetrieveAPIView):
     responses={201: serializers.GuessSerializer()}
 ))
 class GuessCreateAPIView(CreateAPIView):
-    queryset = models.Guess.objects.filter(game_round=models.GameRound.objects.filter(date=datetime.date(datetime.now())).first())
+    #queryset = models.Guess.objects.filter(game_round=models.GameRound.objects.filter(date=datetime.date(datetime.now())).first())
     serializer_class = serializers.GuessCreateSerializer
     
     def perform_create(self, serializer):

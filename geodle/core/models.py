@@ -72,10 +72,10 @@ class GameRoundLocation(models.Model):
         unique_together=(('game_round', 'lat', 'long'),)
 
 class Location(models.Model):
-    id = models.CharField(max_length=10, primary_key=True)
     name = models.CharField(max_length=255)
     lat = models.FloatField()
     long = models.FloatField()
+    id = models.CharField(max_length=10, primary_key=True)
 
 class Guess(models.Model):
     id = models.AutoField(primary_key=True)

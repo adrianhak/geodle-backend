@@ -25,13 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.getenv('DJANGO_DEBUG', 'False') == 'True')
 
 ALLOWED_HOSTS = [
     '10.0.0.128',
     'localhost',
     'geodle.adrianh.net',
-    'geodle-api.adrianh.net'
+    'geodle-api.adrianh.net',
+    'geodle-api-staging.adrianh.net',
 ]
 
 
@@ -72,7 +73,8 @@ CORS_ALLOWED_ORIGINS = [
     'https://geodle-two.vercel.app',
     'https://geodle-git-staging-adrianhak.vercel.app',
     'https://geodle-staging.adrianh.net',
-    'https://geodle.adrianh.net'
+    'https://geodle.adrianh.net',
+    'https://geodle-adrianhak.vercel.app'
 ]
 
 CORS_ALLOW_METHDOS = [
